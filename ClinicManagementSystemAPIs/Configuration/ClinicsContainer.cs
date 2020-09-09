@@ -28,6 +28,6 @@ namespace ClinicManagementSystemAPIs.Configuration {
         private static ConfiguredServices GetConfiguration() => _configurations = new ConfiguredServices();
 
         internal static IClinicInterface GetClinicInterface() => _configurations.ClinicInterface;
-        internal static ClinicController GetClinicController => _configurations.ClinicController;
+        internal static ClinicController GetClinicController() => _configurations.ClinicController;
     }
 }
