@@ -9,8 +9,6 @@ namespace ClinicManagementSystemAPIs.Substructures {
     public abstract class ClinicInterface<T> : IClinicInterface where T: ClinicController {
         protected T _controller;
 
-        internal ClinicInterface(T controller) {
-            _controller = controller;
-        }
+        internal ClinicInterface(T controller) => _controller = controller;
     }
 }

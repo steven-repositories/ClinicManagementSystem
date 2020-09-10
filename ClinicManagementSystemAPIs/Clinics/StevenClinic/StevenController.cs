@@ -8,7 +8,6 @@ using System;
 namespace ClinicManagementSystemAPIs.Clinics.StevenClinic {
     public class StevenController : ClinicController {
         private readonly DataAccess _clinicAccess;
-        private IClinicInterface _clinic;
 
         public StevenController(string connectionString) {
             _clinicAccess = new DataAccess(connectionString);
@@ -17,11 +16,11 @@ namespace ClinicManagementSystemAPIs.Clinics.StevenClinic {
         internal override IClinicCommInterface ConfigureConnector() => new RESTInterface(_clinicAccess);
 
         internal override IClinicInterface ConfigureInterface() {
-            if (_clinic == null) {
-                _clinic = new StevenInterface(this);
+            if (_interface == null) {
+                _interface = new StevenInterface(this);
             }
 
-            return _clinic;
+            return _interface;
         }
 
         internal override IPatientResponse ManageTransaction(ClinicManageBuilder builder) {

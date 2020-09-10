@@ -6,9 +6,7 @@ namespace ClinicManagementSystemAPIs.Subcontrollers {
         protected IClinicInterface _interface;
         protected IClinicCommInterface _connector;
 
-        internal ClinicController() {
-            _connector = ConfigureConnector();
-        }
+        internal ClinicController() => _connector = ConfigureConnector();
 
         internal abstract IClinicInterface ConfigureInterface();
         internal abstract IClinicCommInterface ConfigureConnector();

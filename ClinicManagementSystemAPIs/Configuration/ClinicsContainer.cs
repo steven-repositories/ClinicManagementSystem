@@ -9,7 +9,7 @@ namespace ClinicManagementSystemAPIs.Configuration {
             get {
                 return _clinicController;
             }
-
+            
             set {
                 _clinicController = value;
                 ClinicInterface = value.ConfigureInterface();

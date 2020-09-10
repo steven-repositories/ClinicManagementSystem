@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ClinicManagementSystemAPIs.Layers {
     public class DataAccess {
-        protected string _connectionString;
+        private string _connectionString;
 
         public DataAccess(string connectionString) => _connectionString = connectionString;
     }

@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = "~/Views/Shared/Login/_Layout.cshtml";
+}
+
+<div class="main-agileits">
+    <h1>Steven Clinic Management System</h1>
+    <div class="mainw3-agileinfo form">
+        <div id="login">
+            <form asp-controller="Home" asp-action="Index" method="post">
+                <div class="field-wrap">
+                    <input type="email" required autocomplete="off" placeholder="Enter your Email Address" class="req" />
+                </div>
+                <div class="field-wrap">
+                    <input type="password" required autocomplete="off" placeholder="Enter your Password" class="req" />
+                </div>
+                <p class="forgot"><a href="#">Forgot Password?</a></p>
+                <button class="button button-block">Log In</button>
+            </form>
+        </div>
+    </div>
+</div>
