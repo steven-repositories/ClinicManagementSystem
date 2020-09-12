@@ -12721,7 +12721,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
     margin-top: -3px;*/
     max-height: 33px;
     width: auto;
-    display:block;
+    display: block;
     margin: auto;
 }
 

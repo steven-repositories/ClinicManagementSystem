@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace ClinicManagementSystemAPIs.Abstractions {
     public interface IClinicResponse {
-
+        JsonResult Json();
     }
 
     public interface IPatientResponse : IClinicResponse {
-        public int MyProperty { get; set; }
-        public int MyProperty2 { get; set; }
+        int MyProperty { get; set; }
+        int MyProperty2 { get; set; }
     }
 
     public interface IReportResponse : IClinicResponse {

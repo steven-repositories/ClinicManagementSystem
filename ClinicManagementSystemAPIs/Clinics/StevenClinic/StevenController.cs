@@ -3,13 +3,15 @@ using ClinicManagementSystemAPIs.Builders;
 using ClinicManagementSystemAPIs.Interfaces;
 using ClinicManagementSystemAPIs.Layers;
 using ClinicManagementSystemAPIs.Subcontrollers;
+using Microsoft.Extensions.Configuration;
 using System;
 
 namespace ClinicManagementSystemAPIs.Clinics.StevenClinic {
     public class StevenController : ClinicController {
         private readonly DataAccess _clinicAccess;
 
-        public StevenController(string connectionString) {
+        public StevenController(IConfiguration config) {
+            string connectionString = config.GetConnectionString("StevenClinic");
             _clinicAccess = new DataAccess(connectionString);
         }
 

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="bin\PatientController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\css\alt\adminlte.components.css.map" />
     <None Include="wwwroot\css\alt\adminlte.components.min.css.map" />
     <None Include="wwwroot\css\alt\adminlte.core.css.map" />

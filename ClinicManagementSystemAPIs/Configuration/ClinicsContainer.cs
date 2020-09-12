@@ -1,8 +1,10 @@
 ﻿using ClinicManagementSystemAPIs.Abstractions;
 using ClinicManagementSystemAPIs.Subcontrollers;
+using Microsoft.Extensions.Configuration;
 
 namespace ClinicManagementSystemAPIs.Configuration {
     public class ConfiguredServices {
+        internal IConfiguration Config { get; set; }
         internal IClinicInterface ClinicInterface { get; private set; }
         private ClinicController _clinicController;
         internal ClinicController ClinicController {

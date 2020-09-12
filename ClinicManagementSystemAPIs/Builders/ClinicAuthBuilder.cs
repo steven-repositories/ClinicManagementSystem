@@ -1,9 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ClinicManagementSystemAPIs.Abstractions;
+using ClinicManagementSystemAPIs.Configuration;
+using ClinicManagementSystemAPIs.Entities;
 
 namespace ClinicManagementSystemAPIs.Builders {
     public class ClinicAuthBuilder {
+        internal AuthType AuthType { get; private set; }
+
+        internal ClinicAuthBuilder(AuthType type) => AuthType = type;
+
+        public IPatientResponse Execute() =>
+            ClinicsContainer.GetClinicController()
+            .ProcessTransaction(this);
     }
 }

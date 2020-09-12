@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.Data.SqlClient;
 
 namespace ClinicManagementSystemAPIs.Layers {
     public class DataAccess {
-        private string _connectionString;
+        private SqlConnection _connection;
 
-        public DataAccess(string connectionString) => _connectionString = connectionString;
+        public DataAccess(string connectionString) {
+            _connection = new SqlConnection(connectionString);
+            _connection.Open();
+        }
     }
 }

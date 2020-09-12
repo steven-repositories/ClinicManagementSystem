@@ -7,4 +7,20 @@ namespace ClinicManagementSystemAPIs.Entities {
     public enum ClinicType {
         StevenClinic
     }
+
+    public enum AuthType {
+        New,
+        Continuation,
+        Optimization
+    }
+
+    public enum ManageType {
+        Pull,
+        Delete
+    }
+
+    public enum PullType {
+        MedicalCertificate,
+        Prescription
+    }
 }
