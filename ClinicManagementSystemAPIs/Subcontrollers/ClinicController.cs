@@ -15,9 +15,9 @@ namespace ClinicManagementSystemAPIs.Subcontrollers {
         internal abstract IPatientResponse ManageTransaction(ClinicManageBuilder builder);
         internal abstract IReportResponse ReportTransaction(ClinicReportBuilder builder);
 
-        public object GetRequest(int id) => _connector?.GetRequest(id);
-        public object PostRequest(object body) => _connector?.PostRequest(body);
-        public object PutRequest(object body) => _connector?.PutRequest(body);
-        public bool? DeleteRequest(object id) => _connector?.DeleteRequest(id);
+        public object Get(string procedure, object request) => _connector?.Get(procedure, request);
+        public object Post(string procedure, object body) => _connector?.Post(procedure, body);
+        public object Patch(string procedure, object body) => _connector?.Patch(procedure, body);
+        public bool? Delete(string procedure, object request) => _connector?.Delete(procedure, request);
     }
 }

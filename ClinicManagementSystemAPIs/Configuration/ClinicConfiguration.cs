@@ -2,6 +2,7 @@
 using ClinicManagementSystemAPIs.Clinics.StevenClinic;
 using ClinicManagementSystemAPIs.Configuration;
 using ClinicManagementSystemAPIs.Entities;
+using ClinicManagementSystemAPIs.Utilities;
 using Microsoft.Extensions.Configuration;
 
 namespace ClinicManagementSystemAPIs {
@@ -15,7 +16,7 @@ namespace ClinicManagementSystemAPIs {
                     services.ClinicController = new StevenController(Config);
                     break;
                 default:
-                    break;
+                    throw new ConfigurationException("The type of clinic is not available in enum entities");
             }
         }
 

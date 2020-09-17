@@ -3,8 +3,9 @@ using ClinicManagementSystemAPIs.Configuration;
 using ClinicManagementSystemAPIs.Entities;
 
 namespace ClinicManagementSystemAPIs.Builders {
-    public class ClinicReportBuilder {
+    public class ClinicReportBuilder : ClinicBaseBuilder<ClinicReportBuilder> {
         internal PullType PullType { get; private set; }
+
         internal ClinicReportBuilder(PullType pullType) => PullType = pullType;
 
         public IReportResponse Excecute() =>

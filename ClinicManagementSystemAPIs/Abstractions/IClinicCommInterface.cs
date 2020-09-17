@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ClinicManagementSystemAPIs.Abstractions {
+﻿namespace ClinicManagementSystemAPIs.Abstractions {
     public interface IClinicCommInterface {
-        object GetRequest(int id);
-        object PostRequest(object body);
-        object PutRequest(object body);
-        bool DeleteRequest(object id);
+        object Get(string procedure, object request);
+        object Post(string procedure, object body);
+        object Patch(string procedure, object body);
+        bool Delete(string procedure, object request);
     }
 }

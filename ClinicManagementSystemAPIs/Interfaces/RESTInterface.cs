@@ -8,19 +8,19 @@ namespace ClinicManagementSystemAPIs.Interfaces {
 
         public RESTInterface(DataAccess db) => _db = db;
 
-        public object GetRequest(int id) {
+        public object Get(string procedure, object request) {
             throw new NotImplementedException();
         }
 
-        public object PostRequest(object body) {
+        public object Post(string procedure, object body) {
             throw new NotImplementedException();
         }
 
-        public object PutRequest(object body) {
+        public object Patch(string procedure, object body) {
             throw new NotImplementedException();
         }
 
-        public bool DeleteRequest(object id) {
+        public bool Delete(string procedure, object request) {
             throw new NotImplementedException();
         }
     }

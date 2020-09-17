@@ -1,8 +1,10 @@
 ﻿using ClinicManagementSystemAPIs.Abstractions;
 using ClinicManagementSystemAPIs.Builders;
+using ClinicManagementSystemAPIs.Entities;
 using ClinicManagementSystemAPIs.Interfaces;
 using ClinicManagementSystemAPIs.Layers;
 using ClinicManagementSystemAPIs.Subcontrollers;
+using ClinicManagementSystemAPIs.Utilities;
 using Microsoft.Extensions.Configuration;
 using System;
 
@@ -15,6 +17,7 @@ namespace ClinicManagementSystemAPIs.Clinics.StevenClinic {
             _clinicAccess = new DataAccess(connectionString);
         }
 
+        #region Override methods
         internal override IClinicCommInterface ConfigureConnector() => new RESTInterface(_clinicAccess);
 
         internal override IClinicInterface ConfigureInterface() {
@@ -26,7 +29,16 @@ namespace ClinicManagementSystemAPIs.Clinics.StevenClinic {
         }
 
         internal override IPatientResponse ManageTransaction(ClinicManageBuilder builder) {
-            throw new NotImplementedException();
+            switch (builder.ManageType) {
+                case ManageType.Pull:
+                    break;
+                case ManageType.Delete:
+                    break;
+                default:
+                    throw new BuilderException("The manage type is not available in enum entities");
+            }
+
+            return new StevenPatientResponse(new PatientInformation());
         }
 
         internal override IPatientResponse ProcessTransaction(ClinicAuthBuilder builder) {
@@ -36,5 +48,10 @@ namespace ClinicManagementSystemAPIs.Clinics.StevenClinic {
         internal override IReportResponse ReportTransaction(ClinicReportBuilder builder) {
             throw new NotImplementedException();
         }
+        #endregion
+
+        #region Builder methods
+        //private 
+        #endregion
     }
 }
